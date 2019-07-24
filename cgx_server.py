@@ -1,5 +1,5 @@
 from flask import Flask, request, send_from_directory, session, jsonify, abort, make_response, render_template
-from flask_cors import CORS
+#from flask_cors import CORS
 import cgxaux
 import cloudgenix
 import logging
@@ -14,7 +14,7 @@ sess={}
 
 # set the project root directory as the static folder, you can set others.
 app = Flask(__name__ ,static_url_path="")
-CORS(app)
+#CORS(app)
 
 
 @app.route('/exec', methods=['POST'])
