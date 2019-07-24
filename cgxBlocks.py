@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from flask import Flask, request, send_from_directory, session, jsonify, abort, make_response, render_template
 #from flask_cors import CORS
 import cgxaux

@@ -9,7 +9,7 @@ Instructions:
 * Install python3
 * Install cloudgenix python sdk : pip3 install cloudgenix
 * install flask: pip3 install Flask
-* run the script python3 cgx_server.py
+* run the script python3 cgxBlocks.py
 * Point your browser to http://127.0.0.1:5000/
 
 
