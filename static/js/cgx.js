@@ -1,39 +1,47 @@
+$(document).ready(() => {
+    $('#clear_button').button();
+    $('#save_button').button();
+    $('#run_button').button();
+    $('#load_button').button();
+    $('#show_button').button();
+});
 
-function CGX_uuidv4() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-      return v.toString(16);
-    });
-}
+// function CGX_uuidv4() {
+//     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+//       var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+//       return v.toString(16);
+//     });
+// }
 
 var CGX_URL="http://127.0.0.1:5000";
-var CGX_key=CGX_uuidv4();
-var CGX_Logged_In = false;
+//var CGX_key=CGX_uuidv4();
+//var CGX_Logged_In = false;
 var CGX_save;
 var CGX_resp;
+var CGX_blink_run = false;
 
 // login to CGX gateway server
 // input token
 // return true if successful
-function CGX_Login(token) {
-    $.ajax({
-        type :'post',
-        url: CGX_URL+"/login",
-        data: JSON.stringify({key: CGX_key, token: token}),
-        dataType: 'json',
-        async: false,
-        contentType: 'application/json',
-        success: (data) => {
-            console.log("login success");
-            CGX_Logged_In = true;
-            return true;
-        },
-        error: (data) => {
-            console.log("login failed");
-            return false;
-        },
-    });
-}
+// function CGX_Login(token) {
+//     $.ajax({
+//         type :'post',
+//         url: CGX_URL+"/login",
+//         data: JSON.stringify({key: CGX_key, token: token}),
+//         dataType: 'json',
+//         async: false,
+//         contentType: 'application/json',
+//         success: (data) => {
+//             console.log("login success");
+//             CGX_Logged_In = true;
+//             return true;
+//         },
+//         error: (data) => {
+//             console.log("login failed");
+//             return false;
+//         },
+//     });
+// }
 const copyToClipboard = str => {
     const el = document.createElement('textarea');
     el.value = str;
@@ -50,28 +58,28 @@ function CGX_output(msg) {
 }   
 var resp;
 // return a list of sites
-function CGX_get_sites(){
-    CGX_resp=null;
-    $.ajax({
-        type :'post',
-        url: CGX_URL+"/get/sites",
-        data: JSON.stringify({key: CGX_key}),
-        dataType: 'json',
-        async: false,
-        contentType: 'application/json',
-        success: (data) => {
-            resp= data.sites;
-        },
-        error: (data) => {
-            console.log("can't get sites");
-        }
-    });
-    if (resp.status == 200) {
-        return resp.responesJSON;
-    } else {
-        return []
-    }
-}
+// function CGX_get_sites(){
+//     CGX_resp=null;
+//     $.ajax({
+//         type :'post',
+//         url: CGX_URL+"/get/sites",
+//         data: JSON.stringify({key: CGX_key}),
+//         dataType: 'json',
+//         async: false,
+//         contentType: 'application/json',
+//         success: (data) => {
+//             resp= data.sites;
+//         },
+//         error: (data) => {
+//             console.log("can't get sites");
+//         }
+//     });
+//     if (resp.status == 200) {
+//         return resp.responesJSON;
+//     } else {
+//         return []
+//     }
+// }
 
 $('#clear_button').on('click',(event)=>{
     $("#output").val("");
@@ -89,7 +97,16 @@ $('#load_button').on('click',(event)=>{
     Blockly.Xml.domToWorkspace(CGX_save, workspace);
 });
 
+function blink_run() {
+    $('#run_button').fadeOut(300);
+    $('#run_button').fadeIn(600);
+    if (CGX_blink_run) {
+        setTimeout(blink_run,900)
+    }
+}
 $('#run_button').on('click',(event)=>{
+    CGX_blink_run = true;
+    blink_run();
     Blockly.JavaScript.addReservedWords('code');
     var code = Blockly.Python.workspaceToCode(
       Blockly.getMainWorkspace());
@@ -105,9 +122,12 @@ $('#run_button').on('click',(event)=>{
         contentType: 'application/json',
         success: (data) => {
             CGX_output(data.output);
+            CGX_blink_run = false;
         },
         error: (data) => {
-            console.log("can't get sites");
+            console.log("Error exec script");
+            CGX_output("ERROR RUNNING CODE");
+            CGX_blink_run = false;
         }
     });
     

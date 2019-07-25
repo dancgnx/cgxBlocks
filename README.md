@@ -21,4 +21,5 @@ Saveing and Loading:
 * You can save the cgxBlocks program by clicking "Save" button. It will produce XML string that will be copied to your clipboard and also to the "Saved code:" text box.
 * To load a program, clear the "Saved code:" text box and paste XML string into it and hit the "Load" button.
 * WARNING: The XML will include the authentication TOKEN.
+
 ENJOY!
