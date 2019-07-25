@@ -3,23 +3,19 @@
         CGX Blocks
     </title>
     <script src="/js/blockly_compressed.js"></script>
-    <!-- <script src="google-blockly/blockly_compressed.js"></script> -->
     <script src="google-blockly/blocks_compressed.js"></script>
     <script src="google-blockly/msg/js/en.js"></script>
     <script src="google-blockly/javascript_compressed.js"></script>
     <script src="google-blockly/python_compressed.js"></script>
-    <!-- <script src="google-blockly/blocks_compressed.js"></script>
-    <script src="google-blockly/msg/js/en.js"></script>
-    <script src="google-blockly/javascript_compressed.js"></script>
-    <script src="google-blockly/python_compressed.js"></script> -->
     <script src="/js/acorn_interpreter.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <link rel="stylesheet" href="/css/jquery-ui.min.css">
     <script src="/js/jquery-ui.min.js"></script>
 </head>
 <body>
-    <h1>CGX Blocks</h1>
-    <div id="blocklyDiv" style="height: 480px; width: 1000;"></div>
+    <!-- <h1>CGX Blocks</h1> -->
+    <img src="/images/cgx_blocks.png" width="130" height="50" alt="CGXBlocks">
+    <div id="blocklyDiv" style="height: 480px; width: 1100;"></div>
       <xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
         <category name="Logic" colour="#5C81A6">
           <block type="controls_if"></block>
@@ -360,6 +356,7 @@
       <p>
         <button id="clear_button">Clear output</button>
         <button id="run_button">Run</button>
+        <button id="copyout_button">Copy Output</button>
         <button id="show_button">Show Code</button>
         <button id="save_button">Save Code</button>
         <button id="load_button">Load Code</button>
@@ -367,7 +364,18 @@
       <textarea name="output" id="output" cols="100" rows="20"></textarea>
       <script>
         var workspace = Blockly.inject('blocklyDiv',
-            {toolbox: document.getElementById('toolbox')});
+            {
+              toolbox: document.getElementById('toolbox'),
+              zoom:
+                {
+                  controls: true,
+                  wheel: true,
+                  startScale: 1.0,
+                  maxScale: 3,
+                  minScale: 0.3,
+                  scaleSpeed: 1.2
+                },
+          });
       </script>
       <script src="/js/cgx.js"></script>
       <script src="/js/cgxblocks.js"></script>
