@@ -116,5 +116,6 @@ $('#show_button').on('click',(event)=>{
     Blockly.JavaScript.addReservedWords('code');
     var code = Blockly.Python.workspaceToCode(
       Blockly.getMainWorkspace());
+    code = "import cloudgenix \nimport cgxaux\n\n" + code;
     CGX_output(code);
 });
