@@ -164,6 +164,10 @@ Blockly.defineBlocksWithJsonArray([
             "used_for"
           ],
           [
+            "IP address",
+            "IP address"
+          ],
+          [
             "id",
             "id"
           ]
@@ -202,6 +206,10 @@ Blockly.defineBlocksWithJsonArray([
           [
             "software_version",
             "software_version"
+          ],
+          [
+            "serial_number",
+            "serial_number"
           ]
         ]
       }
@@ -324,6 +332,53 @@ Blockly.Python['cgx_get_elements_object_list'] = function(block) {
     code='cgx.getInterfacesByElement('+value_name+')';
   } else if (dropdown_object_name=="interfaces_status") {
     code = '[]';
+  }
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_FUNCTION_CALL];
+};
+
+// interface -> ellemnt -> attributes
+
+Blockly.defineBlocksWithJsonArray([
+  {
+    "type": "cgx_get_interface_element_attribute",
+    "message0": "for interface %1 of element %2 get attribute %3",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "INTERFACE"
+      },
+      {
+        "type": "input_value",
+        "name": "ELEMENT"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "ATTRIBUTE",
+        "options": [
+          [
+            "IP Address",
+            "IP Address"
+          ]
+        ]
+      }
+    ],
+    "output": null,
+    "colour": 30,
+    "tooltip": "get attributes that needs",
+    "helpUrl": ""
+  }
+]);
+
+
+Blockly.Python['cgx_get_interface_element_attribute'] = function(block) {
+  var value_interface = Blockly.Python.valueToCode(block, 'INTERFACE', Blockly.Python.ORDER_ATOMIC);
+  var value_element = Blockly.Python.valueToCode(block, 'ELEMENT', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_attribute = block.getFieldValue('ATTRIBUTE');
+  // TODO: Assemble Python into code variable.
+  var code = '...';
+  if (dropdown_attribute == "IP Address") {
+    code = "cgx.getInterfacePublicIPAddress("+value_element+","+value_interface+")"
   }
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_FUNCTION_CALL];
