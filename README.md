@@ -39,6 +39,7 @@ WARNING: USE AT YOUR OWN RISK
 * To load a program, clear the "Saved code:" text box and paste XML string into it and hit the "Load" button.
 * WARNING: The XML will include the authentication TOKEN.
 ## Architecture
+
 ![Alt Architecture](https://github.com/dancgnx/cgxBlocks/raw/master/static/images/cgxBlock_Architecture.png?raw=true "Title")
 
 ## Final note
