@@ -39,7 +39,7 @@ Blockly.Python['cgx_token'] = function(block) {
 Blockly.defineBlocksWithJsonArray([
     {
         "type": "cgx_output",
-        "message0": "output %1",
+        "message0": "print %1",
         "args0": [
           {
             "type": "input_value",
