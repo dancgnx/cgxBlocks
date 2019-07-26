@@ -6,6 +6,7 @@ import cloudgenix
 import logging
 import json
 import importlib
+import traceback
 
 
 jd= cloudgenix.jd
@@ -40,7 +41,15 @@ def post_exec():
     cgx = cgxaux.CloudgenixAUX()
 
     # exec the program from blockly
-    exec(input["prog"])
+    try:
+        exec(input["prog"])
+    except Exception as e:
+        cgx.output("================================================")
+        cgx.output("\tRUNTIME ERROR")
+        cgx.output("================================================")
+        cgx.output(traceback.format_exc())
+        cgx.output("================================================")
+
 
     # return the output string
     resp = make_response(jsonify({"output":cgx.out}))
