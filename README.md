@@ -19,7 +19,7 @@ CloudGenix SDK using block progarmming.
 
 ## Instructions to install using docker:
 
-* Install dockers https://www.docker.com/products/docker-desktop
+* Install docker https://www.docker.com/products/docker-desktop
 * Open a terminal or cmd or powershell
 * Run the following command: `docker run --rm -ti -p 127.0.0.1:5000:5000 dancgx/cgxblocks`
 * Point your browser to http://127.0.0.1:5000/
