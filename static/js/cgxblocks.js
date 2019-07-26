@@ -181,7 +181,7 @@ Blockly.defineBlocksWithJsonArray([
   },
   {
     "type": "cgx_element_attribute",
-    "message0": "element %1 attribute %2",
+    "message0": "from element %1 get attribute %2",
     "args0": [
       {
         "type": "input_value",
