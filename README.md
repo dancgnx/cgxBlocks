@@ -1,4 +1,4 @@
-# cgxBlock
+# cgxBlocks
 
 CloudGenix SDK using block progarmming without a single line of code.
 
