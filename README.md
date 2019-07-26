@@ -1,6 +1,6 @@
 # cgxBlock
 
-![Alt Screen short](images/cgxBlocks_list_public_ip.png?raw=true "Title")
+![Alt Screen short](https://github.com/dancgnx/cgxBlocks/raw/master/static/images/cgxBlocks_list_public_ip.png?raw=true "Title")
 
 WARNING: USE AT YOUR OWN RISK
 
