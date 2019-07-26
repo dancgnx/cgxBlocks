@@ -17,7 +17,7 @@ CloudGenix SDK using block progarmming.
 * Point your browser to http://127.0.0.1:5000/
 
 
-## Instructions to install using dockers:
+## Instructions to install using docker:
 
 * Install dockers https://www.docker.com/products/docker-desktop
 * Open a terminal or cmd or powershell
