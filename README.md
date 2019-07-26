@@ -10,10 +10,10 @@ CloudGenix SDK using block progarmming.
 ## Instructions to install using python:
 
 * Install python3
-* Install cloudgenix python sdk : pip3 install cloudgenix
+* Install cloudgenix python sdk : `pip3 install cloudgenix`
 * If pip3 isn't install, please install it
-* Install flask: pip3 install Flask
-* Run the script: python3 cgxBlocks.py
+* Install flask: `pip3 install Flask`
+* Run the script: `python3 cgxBlocks.py`
 * Point your browser to http://127.0.0.1:5000/
 
 
@@ -21,9 +21,9 @@ CloudGenix SDK using block progarmming.
 
 * Install dockers https://www.docker.com/products/docker-desktop
 * Open a terminal or cmd or powershell
-* Run the following command: docker run --rm -ti -p 127.0.0.1:5000:5000 dancgx/cgxblocks
+* Run the following command: `docker run --rm -ti -p 127.0.0.1:5000:5000 dancgx/cgxblocks`
 * Point your browser to http://127.0.0.1:5000/
-* Don't forget to refresh the image for any updates: docker image pull dancgx/cgxblocks
+* Don't forget to refresh the image for any updates: `docker image pull dancgx/cgxblocks`
 
 
 ## Generating python code and running it:
