@@ -1,10 +1,11 @@
 # cgxBlock
 
+CloudGenix SDK using block progarmming without a single line of code.
+
 ![Alt Screen short](https://github.com/dancgnx/cgxBlocks/raw/master/static/images/cgxBlocks_list_public_ip.png?raw=true "Title")
 
 WARNING: USE AT YOUR OWN RISK
 
-CloudGenix SDK using block progarmming.
 
 ## Versions
 * 07/25/2019 - Initial release
