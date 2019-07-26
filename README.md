@@ -36,4 +36,8 @@ CloudGenix SDK using block progarmming.
 * To load a program, clear the "Saved code:" text box and paste XML string into it and hit the "Load" button.
 * WARNING: The XML will include the authentication TOKEN.
 
+## Final note
+This project using A LOT of code from: https://developers.google.com/blockly/ . Thank you *blockly* to make this happen!
+
+
 ENJOY!
