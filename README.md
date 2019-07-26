@@ -41,6 +41,6 @@ WARNING: USE AT YOUR OWN RISK
 
 ## Final note
 This project using A LOT of code from: https://developers.google.com/blockly/ . Thank you *blockly* to make this happen!
-
+For complete python SDK please checkout https://cloudgenix.github.io/sdk-python/
 
 ENJOY!
