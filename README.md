@@ -22,6 +22,7 @@ CloudGenix SDK using block progarmming.
 * Install docker https://www.docker.com/products/docker-desktop
 * Open a terminal or cmd or powershell
 * Run the following command: `docker run --rm -ti -p 127.0.0.1:5000:5000 dancgx/cgxblocks`
+* *WARNING*: If you do not use the `127.0.0.1` in the above command, anyone will be able to connect to the container and execute any code they wish!
 * Point your browser to http://127.0.0.1:5000/
 * Don't forget to refresh the image for any updates: `docker image pull dancgx/cgxblocks`
 
