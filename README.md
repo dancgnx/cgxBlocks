@@ -38,6 +38,8 @@ WARNING: USE AT YOUR OWN RISK
 * You can save the cgxBlocks program by clicking "Save" button. It will produce XML string that will be copied to your clipboard and also to the "Saved code:" text box.
 * To load a program, clear the "Saved code:" text box and paste XML string into it and hit the "Load" button.
 * WARNING: The XML will include the authentication TOKEN.
+## Architecture
+![Alt Architecture](https://github.com/dancgnx/cgxBlocks/raw/master/static/images/cgxBlock_Architecture.png?raw=true "Title")
 
 ## Final note
 This project using A LOT of code from: https://developers.google.com/blockly/ . Thank you *blockly* to make this happen!
